@@ -30,6 +30,24 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FilterPipe } from './pipes/filter.pipe'; 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { RouterModule } from '@angular/router';
+import { ModalComponent } from './modal/modal.component';
+import { MdbAccordionModule } from 'mdb-angular-ui-kit/accordion';
+import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
+import { MdbCheckboxModule } from 'mdb-angular-ui-kit/checkbox';
+import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
+import { MdbDropdownModule } from 'mdb-angular-ui-kit/dropdown';
+import { MdbFormsModule } from 'mdb-angular-ui-kit/forms';
+import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
+import { MdbPopoverModule } from 'mdb-angular-ui-kit/popover';
+import { MdbRadioModule } from 'mdb-angular-ui-kit/radio';
+import { MdbRangeModule } from 'mdb-angular-ui-kit/range';
+import { MdbRippleModule } from 'mdb-angular-ui-kit/ripple';
+import { MdbScrollspyModule } from 'mdb-angular-ui-kit/scrollspy';
+import { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';
+import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
+import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
+
+import { MaterialModule } from './material.module';
 
 registerLocaleData(localeIt, 'it');
 
@@ -38,7 +56,8 @@ registerLocaleData(localeIt, 'it');
     AppComponent,
     UserComponent,
     LoginComponent,
-    FilterPipe
+    FilterPipe,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +79,23 @@ registerLocaleData(localeIt, 'it');
     ReactiveFormsModule,
     HttpClientModule,
     FlexLayoutModule,
-    RouterModule
+    RouterModule,
+    MdbAccordionModule,
+    MdbCarouselModule,
+    MdbCheckboxModule,
+    MdbCollapseModule,
+    MdbDropdownModule,
+    MdbFormsModule,
+    MdbModalModule,
+    MdbPopoverModule,
+    MdbRadioModule,
+    MdbRangeModule,
+    MdbRippleModule,
+    MdbScrollspyModule,
+    MdbTabsModule,
+    MdbTooltipModule,
+    MdbValidationModule,
+    MaterialModule
   ],
   providers: [
     HttpClientModule,
@@ -69,6 +104,7 @@ registerLocaleData(localeIt, 'it');
     {provide: LOCALE_ID, useValue: 'it'}, 
     {provide: DEFAULT_CURRENCY_CODE, useValue: 'EUR'}
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ModalComponent]
 })
 export class AppModule { }

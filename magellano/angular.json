@@ -25,13 +25,19 @@
             "assets": [
               "src/favicon.ico",
               "src/magellano.ico",
-              "src/assets",
-              "src/web.config"
+              {
+                "glob": "**/*",
+                "input": "src/assets/",
+                "ignore": ["**/*.scss"],
+                "output": "/assets/"
+              }
             ],
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/chart.js/dist/chart.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -104,5 +110,7 @@
       }
     }
   },
-  "defaultProject": "magellano"
+  "cli": {
+    "analytics": false
+  }
 }

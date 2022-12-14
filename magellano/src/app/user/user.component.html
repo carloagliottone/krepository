@@ -41,6 +41,7 @@
         <!--<button mat-fab color="warn" (click)="printComponent()">
             <img src="assets/images/print_white.png" width="30" height="30"/>
         </button>-->
+        
         <mat-card-content>
             <form [formGroup]="userForm" (ngSubmit)="onFormSubmit()" class="col-12">
                 <div class="table-responsive">
@@ -140,6 +141,7 @@
                     <div class="col-12">
                         <input type="text" class="form-control" name="search" [(ngModel)]="filteredString"
                             [ngModelOptions]="{standalone: true}" placeholder="Nome da Cercare">
+                          
                     </div>
                 </div>
                 <div class="table-responsive">

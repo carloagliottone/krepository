@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Inject} from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';  
 import { Observable } from 'rxjs';  
 import { UserService } from '../user.service';  
@@ -41,12 +41,17 @@ export class UserComponent implements OnInit {
   loadAllUsers() {  
     this.allUsers = this.userService.getAllUser();  
   }  
+
   onFormSubmit() {  
     this.dataSaved = false;  
-    const user = this.userForm.value;  
-    this.createUser(user);  
+    const user = this.userForm.value;
+    if(user.Nome != null && user.Cognome != null && user.Nome != '' && user.Cognome != '')
+    {  
+      this.createUser(user);  
+    }
     this.userForm.reset();  
   }  
+
   loadUserToEdit(userId: string) {  
     this.userService.getUserById(userId).subscribe(user=> {  
       this.massage = null;  
@@ -60,8 +65,8 @@ export class UserComponent implements OnInit {
       this.userForm.controls['Email'].setValue(user.Email); 
       this.userForm.controls['Cellulare'].setValue(user.Cellulare); 
     });  
-  
   }  
+
   createUser(user: User) {  
     if (this.userIdUpdate == null) {  
       this.userService.insertUser(user).subscribe(  
@@ -84,6 +89,7 @@ export class UserComponent implements OnInit {
       });  
     }  
   }   
+
   deleteUser(userId: string) {  
     if (confirm("Sicuro di voler cancellare questo contatto?")) 
     {   
@@ -97,12 +103,14 @@ export class UserComponent implements OnInit {
       });  
     }  
   }  
+
   resetForm() {  
     this.userForm.reset();  
     this.massage = null;  
     this.dataSaved = false; 
     this.userIdUpdate = null; 
   }  
+
   printComponent()
   {
     //window.print(); 
@@ -121,3 +129,4 @@ export class UserComponent implements OnInit {
     });;
   }
 }
+

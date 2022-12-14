@@ -1,4 +1,4 @@
-import { ValueConverter } from '@angular/compiler/src/render3/view/template';
+//import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 import { Pipe, PipeTransform } from '@angular/core';
 import { map } from 'rxjs';
 import { filter } from 'rxjs';
