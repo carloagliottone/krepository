@@ -48,6 +48,7 @@ import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 
 import { MaterialModule } from './material.module';
+import { MatSelectModule } from '@angular/material/select';
 
 registerLocaleData(localeIt, 'it');
 
@@ -95,7 +96,8 @@ registerLocaleData(localeIt, 'it');
     MdbTabsModule,
     MdbTooltipModule,
     MdbValidationModule,
-    MaterialModule
+    MaterialModule,
+    MatSelectModule
   ],
   providers: [
     HttpClientModule,

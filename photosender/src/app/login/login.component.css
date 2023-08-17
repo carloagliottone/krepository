@@ -1,0 +1,9 @@
+.main-div-login mat-card
+{
+    padding: 10px;
+    height: 100%;
+}
+.login-form
+{
+    margin-top: 20px;
+}

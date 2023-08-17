@@ -11,7 +11,7 @@ import { Login } from './login';
 })
 export class UserService {
 
-  url = 'http://192.168.129.194/WebApplicationMagellano/Api/User'
+  url = 'http://desktop002/WebApplicationMagellano/Api/User'
   //url = 'http://localhost:55353/Api/User'
   validLogin: string;
 

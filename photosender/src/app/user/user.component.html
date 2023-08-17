@@ -1,0 +1,252 @@
+<div class="container" >
+    <mat-card>
+        <div class="container">
+            <div class="row">
+                <div class="col-2" style="padding-left: 0px; padding-bottom: 5px">
+                    <!--<button mat-fab color="primary" href="javascript:void(0)" [routerLink]="['/login']"
+                        style="margin-right: 5px">
+                        <img src="assets/images/user_white.png" width="24" height="24" />
+                    </button>-->
+                    <button mat-fab color="primary" (click)="printComponent()" style="margin-right: 5px">
+                        <img src="assets/images/print_white.png" width="24" height="24" />
+                    </button>
+                </div>
+                <div class="col">
+                </div>
+                <div class="col-3" style="display: block; padding: 0px;">
+                    <!--<a style=""><b>user: {{name}}</b></a>-->
+                    <!--<div class="card" style="float: right;">
+                        <div class="card-header">
+                            <b>Logged User: </b>
+                            <span *ngIf="name!=null" style="color:#800000;"> {{name}} </span>
+                            <span *ngIf="name==null" style="color:#800000;"> - </span>
+                            <button type="button" *ngIf="name!=null" class="btn btn-danger" matTooltip="Click Logout Button" (click)="logout()">Logout</button>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+
+        <mat-toolbar color="primary">
+            <div class="container text-center" style="color:rgb(0, 0, 0);">
+                <br>
+                <a>
+                    <img src="assets/images/logo.png" width="100" height="100" />
+                </a>
+                <br>
+                <h1>Photo Sender</h1>
+            </div>
+        </mat-toolbar>
+        <br><br>
+        <!--<button mat-fab color="warn" (click)="printComponent()">
+            <img src="assets/images/print_white.png" width="30" height="30"/>
+        </button>-->
+        
+        <mat-card-content>
+            <form [formGroup]="userForm" (ngSubmit)="onFormSubmit()" class="col-12">
+                <div class="table-responsive">
+                    <table class="table-centered">
+                        <tr>
+                            <td class="px-2">
+                                <mat-form-field class="demo-full-width">
+                                    <input formControlName="Nome" matTooltip="Inserisci Nome" matInput
+                                        placeholder="Nome">
+                                </mat-form-field>
+                                <mat-error>
+                                    <span *ngIf="!userForm.get('Nome').value && userForm.get('Nome').touched"></span>
+                                </mat-error>
+                            </td>
+                            <td class="px-2">
+                                <mat-form-field class="demo-full-width">
+                                    <input formControlName="Cognome" matTooltip="Inserisci Cognome" matInput
+                                        placeholder="Cognome">
+                                </mat-form-field>
+                                <mat-error>
+                                    <span
+                                        *ngIf="!userForm.get('Cognome').value && userForm.get('Cognome').touched"></span>
+                                </mat-error>
+                            </td>
+                            <!--<td class="px-2">
+                                <mat-form-field class="demo-full-width">
+                                    <input matTooltip="Inserisci Telefono" formControlName="Telefono" matInput
+                                        placeholder="Telefono">
+                                </mat-form-field>
+                                <mat-error>
+                                    <span
+                                        *ngIf="!userForm.get('Telefono').value && userForm.get('Telefono').touched"></span>
+                                </mat-error>
+                            </td>-->
+                            
+                            <!--<td class="px-2">
+                                <mat-form-field class="demo-full-width">
+                                    <input matTooltip="Inserisci Cellulare" formControlName="Cellulare" matInput
+                                        placeholder="Cellulare">
+                                </mat-form-field>
+                                <mat-error>
+                                    <span
+                                        *ngIf="!userForm.get('Cellulare').value && userForm.get('Cellulare').touched"></span>
+                                </mat-error>
+                            </td>-->
+                            <!--<td class="px-2 content-center">
+                                <button type="submit" mat-raised-button color="primary" matTooltip="Click Submit Button"
+                                    [disabled]="!userForm.valid">Submit</button>
+                            </td>
+                            <td class="px-2 content-center">
+                                <button type="reset" mat-raised-button color="warn" matTooltip="Click Reset Button"
+                                    (click)="resetForm()">Reset</button>
+                            </td>-->
+                        </tr>
+                        <tr>
+                           
+                            <!--<td class="px-2">
+                                <mat-form-field class="demo-full-width">
+                                    <input matTooltip="Inserisci Matricola" formControlName="Matricola" matInput
+                                        placeholder="Matricola">
+                                </mat-form-field>
+                                <mat-error>
+                                    <span
+                                        *ngIf="!userForm.get('Matricola').value && userForm.get('Matricola').touched"></span>
+                                </mat-error>
+                            </td>-->
+                            <!--<td class="px-2">
+                                <mat-form-field class="demo-full-width">
+                                    <input formControlName="Account" matTooltip="Inserisci Account Code" matInput
+                                        placeholder="Account">
+                                </mat-form-field>
+                                <mat-error>
+                                    <span
+                                        *ngIf="!userForm.get('Account').value && userForm.get('Account').touched"></span>
+                                </mat-error>
+                            </td>-->
+                            <td class="px-2">
+                                <mat-form-field class="demo-full-width">
+                                        <mat-select disableRipple value="0" placeholder="Formato *">
+                                            <mat-option value="1">7x10</mat-option>
+                                            <mat-option value="2">10x15</mat-option>
+                                            <mat-option value="3">13x18</mat-option>
+                                            <mat-option value="4">15x20</mat-option>
+                                            <mat-option value="5">20x25</mat-option>
+                                            <mat-option value="6">20x30</mat-option>
+                                            <mat-option value="7">30x40</mat-option>
+                                            <mat-option value="8">30x45</mat-option>
+                                            <mat-option value="9">Polaroid</mat-option>
+                                            <mat-option value="10">Instax</mat-option>
+                                            <mat-option value="11">Foto Tessera</mat-option>
+                                        </mat-select>
+                                </mat-form-field>
+                                <mat-error>
+                                    <span
+                                        *ngIf="!userForm.get('Formato').value && userForm.get('Formato').touched"></span>
+                                </mat-error>
+                            </td>
+                            <td class="px-2">
+                                <mat-form-field class="demo-full-width">
+                                    <input matTooltip="Inserisci Email" formControlName="Email" matInput
+                                        placeholder="Email">
+                                </mat-form-field>
+                                <mat-error>
+                                    <span *ngIf="!userForm.get('Email').value && userForm.get('Email').touched"></span>
+                                </mat-error>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="px-2">
+                                <mat-form-field class="demo-full-width">
+                                        <mat-select disableRipple placeholder="Ubicazione File *">
+                                            <mat-option value="1">Locale</mat-option>
+                                            <mat-option value="2">Remoto</mat-option>
+                                        </mat-select>
+                                </mat-form-field>
+                                <mat-error>
+                                    <span
+                                        *ngIf="!userForm.get('Ubicazione').value && userForm.get('Ubicazione').touched"></span>
+                                </mat-error>
+                            </td>
+                            <td class="px-2">
+                                <mat-form-field class="demo-full-width">
+                                        <mat-select disableRipple placeholder="Tipo Stampa *">
+                                            <mat-option value="1">Lucido</mat-option>
+                                            <mat-option value="2">Patinato</mat-option>
+                                        </mat-select>
+                                </mat-form-field>
+                                <mat-error>
+                                    <span
+                                        *ngIf="!userForm.get('Tipo').value && userForm.get('Tipo').touched"></span>
+                                </mat-error>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="px-2" colspan="2">
+                                <mat-form-field class="full-width">
+                                    <mat-label>Note</mat-label>
+                                    <textarea matInput rows="5" cols="40" placeholder="Ex. Inserire Dettagli"></textarea>
+                                </mat-form-field>
+                                <mat-error>
+                                    <span
+                                        *ngIf="!userForm.get('Note').value && userForm.get('Note').touched"></span>
+                                </mat-error>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="px-2" colspan="2">
+                                <button mat-raised-button class="full-width" color="primary">INVIA</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="px-2" colspan="2">
+                                <p *ngIf="dataSaved" style="color:rgb(24, 10, 151);font-size:20px;font-weight:bold"
+                                    Class="success">
+                                    {{massage}}
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <br><br>
+                <!--<div class="input-group mb-3">
+                    <div class="col-12">
+                        <input type="text" class="form-control" name="search" [(ngModel)]="filteredString"
+                            [ngModelOptions]="{standalone: true}" placeholder="Nome da Cercare">
+                          
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-hover" id="UserTable">
+                        <thead>
+                            <tr ngclass="btn-warn">
+                                <th class="tbl2">Id</th>
+                                <th class="tbl2">Cognome</th>
+                                <th class="tbl2">Nome</th>
+                                <th class="tbl2">Matricola</th>
+                                <th class="tbl2">Account</th>
+                                <th class="tbl2">Telefono</th>
+                                <th class="tbl2">Cellulare</th>
+                                <th class="tbl2">Email</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let user of allUsers | filter:filteredString | async">
+                                <td class="tbl2">{{user.ID}}</td>
+                                <td class="tbl2">{{user.Cognome}}</td>
+                                <td class="tbl2">{{user.Nome}}</td>
+                                <td class="tbl2">{{user.Matricola}}</td>
+                                <td class="tbl2">{{user.Account}}</td>
+                                <td class="tbl2">{{user.Telefono}}</td>
+                                <td class="tbl2">{{user.Cellulare}}</td>
+                                <td class="tbl2">{{user.Email}}</td>
+                                <td class="col-md-1" *ngIf="name!=null">
+                                    <button type="button" class="btn btn-warning" matTooltip="Click Edit Button"
+                                        (click)="loadUserToEdit(user.ID)">Modifica</button>
+                                </td>
+                                <td class="col-md-1" *ngIf="name!=null">
+                                    <button type="button" class="btn btn-danger" matTooltip="Click Delete Button"
+                                        (click)="deleteUser(user.ID)">Cancella</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>-->
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

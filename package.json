@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@types/w3c-web-usb": "^1.0.6",
+    "ng-thermal-print": "^1.0.3"
+  }
+}
